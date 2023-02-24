@@ -37,7 +37,6 @@ class Display {
             let btn = game.selectBtn(i);
             this.lighting(btn[0], true);
             btn[0].style.cursor = 'pointer';
-
         }
         game.mainBtn.style.width = '102px';
         game.mainBtn.style.height = '102px';

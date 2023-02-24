@@ -15,8 +15,9 @@ class Game {
         this.btnReset = document.getElementById('btn-reset');
         this.mainBtn.addEventListener('click', e => {
             if(!this.started) {
-                this.started = true;
                 this.lose = false;
+                this.reset();
+                this.started = true;
                 this.gameOn();
             }
         });
@@ -30,7 +31,10 @@ class Game {
             });
         }
         this.btnReset.addEventListener('click', e => {
-            this.reset();
+            let resetConfirm = confirm('Your score will not be saved, continue?');
+            if(resetConfirm) {
+                this.reset();
+            }
         });
 
         this.init();
@@ -58,7 +62,8 @@ class Game {
     }
 
     speedUp(){
-        this.speed += 0.1;
+        this.speed *= 1.1;
+        console.log(this.speed)
     }
 
     setTurn(turn){
@@ -151,7 +156,10 @@ class Game {
 
     }
 
-    gameOn() {
+    gameOn(reset = false) {
+        if(reset) {
+            this.reset();
+        }
         this.setTurn(false);
         this.generateColor();
         let i = 0;
@@ -174,8 +182,10 @@ class Game {
             this.init();
             display.lightOffAll();
             display.setTurn();
-            display.setScore();
-            display.setStage();
+            if(!this.lose) {
+                display.setScore();
+                display.setStage();
+            }
         }
     }
 }
