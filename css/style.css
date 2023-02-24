@@ -45,6 +45,7 @@ main {
     left:0;
     transition:opacity 0.2s, top 0.2s, left 0.2s;
     touch-action: manipulation;
+    -webkit-tap-highlight-color:transparent;
 }
 
 .group-btn {
