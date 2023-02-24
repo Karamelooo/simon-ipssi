@@ -6,13 +6,13 @@ class Display {
         this.stageCounter = document.getElementById('stage');
         this.mainBtn = document.getElementById('btn-mainBtn');
         this.scoreboard = document.getElementById('scoreboard');
+        this.scoreboardRow = document.getElementById('tbody');
         this.scoreboardData;
         this.update = false;
         this.init();
     }
 
     init(){
-        this.updateScoreboard();
     }
 
     setScore(){
@@ -86,9 +86,25 @@ class Display {
         if(this.update == true) {
             this.update = false;
             console.log(game.scoreboardData);
-            game.scoreboardData.forEach(e => {
-                game.scoreboard.tbody.appendChild('tr');
-            });
+            let children = this.scoreboardRow.childNodes;
+            this.scoreboardRow.innerHTML = "";
+            for (let i = 0; i < game.scoreboardData.length; i++) {
+                let tr = document.createElement('tr');
+                this.scoreboardRow.appendChild(tr);
+                let td = document.createElement('td');
+                this.scoreboardRow.appendChild(td);
+                td.innerText = game.scoreboardData[i].name;
+                console.log(game.scoreboardData[i].name);
+                 td = document.createElement('td');
+                this.scoreboardRow.appendChild(td);
+                td.innerText = game.scoreboardData[i].score;
+                 td = document.createElement('td');
+                this.scoreboardRow.appendChild(td);
+                td.innerText = game.scoreboardData[i].stage;
+                 td = document.createElement('td');
+                this.scoreboardRow.appendChild(td);
+                td.innerText = game.scoreboardData[i].date;
+            }
         }
     }
 }

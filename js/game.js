@@ -165,7 +165,6 @@ class Game {
     }
 
     gameOn(reset = false) {
-        ajax.getData();
         if(reset) {
             this.reset();
         }
@@ -190,6 +189,7 @@ class Game {
         if(this.turn === true) {
             this.init();
             display.lightOffAll();
+            ajax.getData();
             display.setTurn();
             if(!this.lose) {
                 display.setScore();

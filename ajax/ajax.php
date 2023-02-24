@@ -18,7 +18,7 @@ if(isset($_POST) && isset($_GET['action']) && $_GET['action'] == 'send')
 if(isset($_GET['action']) && $_GET['action'] == 'get')
 {
     require_once('../conf/config.php');
-    $req = "SELECT name, score, stage, date FROM simon";
+    $req = "SELECT name, score, stage, date FROM simon ORDER BY score desc";
     $result = mysqli_query($id, $req) or die($mysqli_error($id));
     $array = [];
     $i = 0;

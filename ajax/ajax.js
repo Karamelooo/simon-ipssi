@@ -22,9 +22,9 @@ class AjaxRequest {
 		this.xhttp.setRequestHeader("Content-Type", "application/json");
 		this.xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				 game.scoreboardData = this.responseText;
-				 display.update = true;
-				 display.updateScoreboard();
+				game.scoreboardData = JSON.parse(this.responseText);
+				display.update = true;
+				display.updateScoreboard();
 			}
 		}
 		this.xhttp.send();
