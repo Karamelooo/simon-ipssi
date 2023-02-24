@@ -1,6 +1,5 @@
 class AjaxRequest {
 	constructor() {
-		this.xhttp = new XMLHttpRequest();
 		this.res;
 		this.data;
 		this.init();
@@ -11,6 +10,7 @@ class AjaxRequest {
 	}
 
 	sendRequest() {
+		this.xhttp = new XMLHttpRequest();
 		this.xhttp.open("POST", "ajax/ajax.php?action=send", true); 
 		this.xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		this.data = "name="+game.firstName.value+"&score="+game.score+"&stage="+game.stage;
@@ -23,6 +23,7 @@ class AjaxRequest {
 	}
 
 	getData() {
+		this.xhttp = new XMLHttpRequest();
 		this.xhttp.open("GET", "ajax/ajax.php?action=get", true); 
 		this.xhttp.setRequestHeader("Content-Type", "application/json");
 		this.xhttp.onreadystatechange = function() {
