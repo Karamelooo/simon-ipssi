@@ -3,6 +3,11 @@ class AjaxRequest {
 		this.xhttp = new XMLHttpRequest();
 		this.res;
 		this.data;
+		this.init();
+	}
+
+	init(){
+		this.getData();
 	}
 
 	sendRequest() {
