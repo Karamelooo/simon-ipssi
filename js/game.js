@@ -31,9 +31,11 @@ class Game {
             });
         }
         this.btnReset.addEventListener('click', e => {
-            let resetConfirm = confirm('Your score will not be saved, continue?');
-            if(resetConfirm) {
-                this.reset();
+            if(this.turn) {
+                let resetConfirm = confirm('Your score will not be saved, continue?');
+                if(resetConfirm) {
+                    this.reset();
+                }
             }
         });
 
