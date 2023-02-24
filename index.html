@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Hugo PETIT">
+        <link rel="stylesheet" href="css/style.css?ver=1.0">
+        <title>Simon Game</title>
+    </head>
+    <body>
+        <main>
+            <h1>Simon Game</h1>
+            <section id="infos">
+                <h3>Score :<span id="score">0</span></h3>
+                <h3>Highscore :<span id="highscore">0</span></h3>
+                <h3>Stage :<span id="stage">1</span></h3>
+            </section>
+            <section id="simon">
+                <div class="btns">
+                    <div class="group-btn group-btn-green">
+                        <button class="btn" id="btn-green" value="0">
+                            <div class="btn-behind"></div>
+                        </button>
+                    </div>
+                    <div class="group-btn group-btn-red">
+                        <button class="btn" id="btn-red" value="1">
+                            <div class="btn-behind"></div>
+                        </button>
+                    </div>
+                    <div class="group-btn group-btn-yellow">
+                        <button class="btn" id="btn-yellow" value="2">
+                            <div class="btn-behind"></div>
+                        </button>
+                    </div>
+                    <div class="group-btn group-btn-blue">
+                        <button class="btn" id="btn-blue" value="3">
+                            <div class="btn-behind"></div>
+                        </button>
+                    </div>
+                    <button class="btn" id="btn-mainBtn">Start game!</button>
+                </div>
+            </section>
+            <section id="options">
+                <button id="btn-reset">New game</button>
+            </section>
+        </main>
+    </body>
+    <script src="js/game.js?ver=1.0"></script>
+    <script src="js/display.js?ver=1.0"></script>
+    <script src="js/script.js?ver=1.0"></script>
+</html>
