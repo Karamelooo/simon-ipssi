@@ -12,9 +12,17 @@
         <main>
             <h1>Simon Game</h1>
             <section id="infos">
-                <h3>Your score :<span id="score">0</span></h3>
-                <h3>Your highscore :<span id="highscore">0</span></h3>
-                <h3>Stage :<span id="stage">1</span></h3>
+                <h3>Your score: <span id="score">0</span></h3>
+                <h3>Your highscore: <span id="highscore">0</span></h3>
+                <h3>Stage: <span id="stage">1</span></h3>
+                <h3>
+                    <label for="firstName">Name:</label>
+                    <input type="text" name="firstName" id="firstName">
+                </h3>
+                <h3>
+                    <label for="sendResult">Send result</label>
+                    <input type="checkbox" name="sendResult" id="sendResult">
+                </h3>
             </section>
             <section id="simon">
                 <div class="btns">
@@ -44,9 +52,30 @@
             <section id="options">
                 <button id="btn-reset">New game</button>
             </section>
+            <section id="scoreboard">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Stage</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Placeholder</th>
+                            <td>Only</td>
+                            <td>avaialable</td>
+                            <td>online</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </main>
     </body>
     <script src="js/game.js?ver=1.0"></script>
     <script src="js/display.js?ver=1.0"></script>
+    <script src="ajax/ajax.js?ver=1.0"></script>
     <script src="js/script.js?ver=1.0"></script>
 </html>

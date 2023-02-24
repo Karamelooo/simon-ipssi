@@ -13,6 +13,9 @@ class Game {
         this.blueShadow = document.querySelector("#btn-blue + .btn-behind");
         this.mainBtn = document.getElementById('btn-mainBtn');
         this.btnReset = document.getElementById('btn-reset');
+        this.firstName = document.getElementById('firstName');
+        this.sendResult = document.getElementById('sendResult');
+        this.scoreboardData = [];
         this.mainBtn.addEventListener('click', e => {
             if(!this.started) {
                 this.lose = false;
@@ -93,6 +96,9 @@ class Game {
                 display.setHighscore();
             }
             this.lose = true;
+            if(this.sendResult.checked) {
+                ajax.sendRequest();
+            }
             this.reset();
         }
         // winning
@@ -159,6 +165,7 @@ class Game {
     }
 
     gameOn(reset = false) {
+        ajax.getData();
         if(reset) {
             this.reset();
         }

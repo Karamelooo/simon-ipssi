@@ -148,3 +148,19 @@ main {
     border-radius:10px;
     cursor:pointer;
 }
+
+#scoreboard {
+    border:1px solid black;
+    border-radius:10px;
+    margin:10px;
+}
+
+table {
+    border-collapse:collapse;
+}
+
+table tr {
+}
+table td, table th{
+    padding:10px;
+}

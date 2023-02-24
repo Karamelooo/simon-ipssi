@@ -5,6 +5,14 @@ class Display {
         this.highscoreCounter = document.getElementById('highscore');
         this.stageCounter = document.getElementById('stage');
         this.mainBtn = document.getElementById('btn-mainBtn');
+        this.scoreboard = document.getElementById('scoreboard');
+        this.scoreboardData;
+        this.update = false;
+        this.init();
+    }
+
+    init(){
+        this.updateScoreboard();
     }
 
     setScore(){
@@ -67,12 +75,20 @@ class Display {
             }, 400)
         }
     }
-
     setStage(){
         this.stageCounter.innerText = game.stage;
     }
     
     setHighscore(){
         this.highscoreCounter.innerText = game.highscore;
+    }
+    updateScoreboard(){
+        if(this.update == true) {
+            this.update = false;
+            console.log(game.scoreboardData);
+            game.scoreboardData.forEach(e => {
+                game.scoreboard.tbody.appendChild('tr');
+            });
+        }
     }
 }
