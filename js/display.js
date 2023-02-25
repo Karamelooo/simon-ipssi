@@ -85,7 +85,6 @@ class Display {
 	updateScoreboard(){
 		if(this.update == true) {
 			this.update = false;
-			console.log(game.scoreboardData);
 			let children = this.scoreboardRow.childNodes;
 			this.scoreboardRow.innerHTML = "";
 			for (let i = 0; i < game.scoreboardData.length; i++) {
@@ -94,7 +93,6 @@ class Display {
 				let td = document.createElement('td');
 				this.scoreboardRow.appendChild(td);
 				td.innerText = game.scoreboardData[i].name;
-				console.log(game.scoreboardData[i].name);
 				 td = document.createElement('td');
 				this.scoreboardRow.appendChild(td);
 				td.innerText = game.scoreboardData[i].score;

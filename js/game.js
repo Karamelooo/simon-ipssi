@@ -68,7 +68,6 @@ class Game {
 
 	speedUp(){
 		this.speed *= 1.1;
-		console.log(this.speed)
 	}
 
 	setTurn(turn){
